@@ -6,7 +6,14 @@ var PORT = 4000;
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-var reservations = [];
+var reservations = [
+    {   
+        name: "Joe",
+        phone: "555-555-5555",
+        email: "cool@guy.com",
+        id: "1"
+    }
+];
 var tables= [];
 
 app.get("/", function(request, response) {
@@ -21,6 +28,11 @@ app.get("/reservations", function(request, response) {
 app.get("/tables", function(request, response) {
     response.sendFile(path.join(__dirname, "tables.html"))
 });
+
+app.get("/api/tables", function(request, response) {
+    console.log(reservations);
+    return response.json(reservations);
+})
 
 
 

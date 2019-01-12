@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Hot Restaurant</title>
 </head>
 <body>
@@ -37,23 +36,68 @@
 
     <div class="card" class="reservation">
         <div><h1>Table</h1></div>
-        <h1 id="tableID">ID: </h1>
-        <h1 id="name">Name: </h1>
-        <h1 id="email">Email: </h1>
-        <h1 id="phone">Phone: </h1>
+        <h2 id="tableID">ID: </h2>
+        <h2 id="name">Name: </h2>
+        <h2 id="email">Email: </h2>
+        <h2 id="phone">Phone: </h2>
     </div>
 
 </div>
 </div>
 
-<footer>
 <div class="container">
-  <p>
-    <a href="/api/tables" style="margin:auto">API Table Link</a>
-    |
-    <a href="/api/waitlist" style="margin:auto">API Wait List</a>
-  </p>
+    <div class="card">
+        <div class="card-header">Waiting List</div>
+    
+        <div class="card" class="waitingList">
+            <h2 id="waitingID">ID: </h2>
+            <h2 id="waitingName">Name: </h2>
+            <h2 id="waitingEmail">Email: </h2>
+            <h2 id="waitingPhone">Phone: </h2>
+        </div>
+    
+    </div>
 </div>
-</footer>        
+        
+
+
+
+<footer>
+    <div class="container">
+    <p>
+        <a href="#" style="margin:auto" class="clear">Clear Table</a>
+        |
+        <a href="/api/tables" style="margin:auto">API Table Link</a>
+        |
+        <a href="/api/waitlist" style="margin:auto">API Wait List</a>
+    </p>
+    </div>
+</footer>  
+     
+<script type="text/javascript">
+    $.get("/api/tables", function (data){
+        console.log(data);
+        for (var i = 0; i < data.length; i++){
+            if (data.length < 5){
+                $("#tableID").text("ID: " + data[i].id);
+                $("#name").text("Name: " + data[i].name);
+                $("#email").text("Email: " + data[i].email);
+                $("#phone").text("Phone: " + data[i].phone);
+            }
+            else{
+                $("#waitingID").text("ID: " + data[i].id);
+                $("#waitingName").text("Name: " + data[i].name);
+                $("#waitingEmail").text("Email: " + data[i].email);
+                $("#waitingPhone").text("Phone: " + data[i].phone);
+
+            }
+         }
+
+    $(".clear").on("click", function(){
+        reservations.empty();
+    })     
+        
+    })    
+</script>
 </body>
 </html>
