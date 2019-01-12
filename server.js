@@ -10,11 +10,12 @@ var reservations = [];
 var tables= [];
 
 app.get("/", function(request, response) {
+   
     response.sendFile(path.join(__dirname, "index.html"))
 });
 
 app.get("/reservations", function(request, response) {
-    response.sendFile(path.join(__dirname, "reservations.html"))
+    response.sendFile(path.join(__dirname, "/reservations.html"))
 });
 
 app.get("/tables", function(request, response) {
