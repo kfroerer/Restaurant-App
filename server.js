@@ -1,7 +1,7 @@
 var express = require("express");
 var path = require("path");
 var app = express();
-var PORT = 3000;
+var PORT = 4000;
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -14,8 +14,8 @@ app.get("/", function(request, response) {
     response.sendFile(path.join(__dirname, "index.html"))
 });
 
-app.get("/reservations", function(request, response) {
-    response.sendFile(path.join(__dirname, "reservations.html"))
+app.get("reservations.html", function(request, response) {
+    response.sendFile(path.join(__dirname, "/reservations"))
 });
 
 app.get("/tables", function(request, response) {
