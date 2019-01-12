@@ -14,8 +14,8 @@ app.get("/", function(request, response) {
     response.sendFile(path.join(__dirname, "index.html"))
 });
 
-app.get("reservations.html", function(request, response) {
-    response.sendFile(path.join(__dirname, "/reservations"))
+app.get("/reservations", function(request, response) {
+    response.sendFile(path.join(__dirname, "reservations.html"))
 });
 
 app.get("/tables", function(request, response) {
