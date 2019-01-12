@@ -6,19 +6,19 @@ var PORT = 3000;
 app.use(express.urlencoded({extended: true}));
 app.use(express.json);
 
-var res = [];
-var tab= [];
+var reservations = [];
+var tables= [];
 
 app.get("/", function(request, response) {
-    res.sendFile(path.join(__dirname, "index.html"))
+    response.sendFile(path.join(__dirname, "index.html"))
 });
 
 app.get("/reservations", function(request, response) {
-    res.sendFile(path.join(__dirname, "reservations.html"))
+    response.sendFile(path.join(__dirname, "reservations.html"))
 });
 
 app.get("/tables", function(request, response) {
-    res.sendFile(path.join(__dirname, "tables.html"))
+    response.sendFile(path.join(__dirname, "tables.html"))
 });
 
 
