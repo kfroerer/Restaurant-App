@@ -5,37 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Document</title>
+    <title>Hot Restaurant</title>
 </head>
 <body>
-<div class="jumbotron" id="top" style="text-align:center;margin:auto;width:80%" >
-<h1>
-    Hot Restaurant
-</h1>
-<br>
-<h3>
-Book You Tables Before They're All Gone!!!</h3>
-<div>
+    
+<div class="jumbotron" id="top" style="text-align:center;margin:auto;width:80%">
+    <h1 class="display-4"><i class="fas fa-fire-alt"></i>Hot Restaurant</h1>
+    <br>
+    <h3>We only have 5 tables. Book yours before they are gone!</h3>
     
     <a href="reservations.html" style="margin:auto">
-        <button type="button" class="btn btn-primary" ><i class="fa fa-utensils"></i> Make Reservation</button>
+        <button type="button" class="btn btn-primary" >
+            <i class="fa fa-utensils"></i> Make Reservation</button>
     </a>
 
    <a href="tables.html" style="margin:auto">
-<button type="button" class="btn btn-light"><i class="fa fa-clipboard-list"></i>View Tables</button>
-</a>
+        <button type="button" class="btn btn-light">
+            <i class="fa fa-clipboard-list"></i>View Tables</button>
+    </a>
 </div>
 
+<div class="container">
+    <p>
+    <a href="/api/tables" style="margin:auto">API Table Link</a>
+    |
+    <a href="/api/waitlist" style="margin:auto">API Wait List</a>
+</p>
 </div>
-
-
-<a href="#" style="margin:auto">API Table Link</a>
-|
-<a href="#" style="margin:auto">API Wait List</a>
-
 
 </body>
 </html>
