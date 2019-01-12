@@ -35,8 +35,7 @@
     <div class="card-header">Current Reservations</div>
 
     <div class="card" class="reservation">
-        <div><h1>Table</h1></div>
-        <h2 id="tableNum">Table Number: </h2>
+        <div><h2 id="tableNum">Table Number: </h2></div>
         <h2 id="name">Name: </h2>
         <h2 id="email">Email: </h2>
         <h2 id="phone">Phone: </h2>
@@ -44,7 +43,7 @@
 
 </div>
 </div>
-
+<br>
 <div class="container">
     <div class="card">
         <div class="card-header">Waiting List</div>
@@ -76,9 +75,9 @@
      
 <script type="text/javascript">
     $.get("/api/tables", function (data){
-        console.log(data);
+        
         for (var i = 0; i < data.length; i++){
-            if (data.length < 5){
+            if (data.length < 1){
                 $("#tableNum").text("Table Number: " + data[i].tableNum);
                 $("#name").text("Name: " + data[i].name);
                 $("#email").text("Email: " + data[i].email);
@@ -89,8 +88,9 @@
                 $("#waitingName").text("Name: " + data[i].name);
                 $("#waitingEmail").text("Email: " + data[i].email);
                 $("#waitingPhone").text("Phone: " + data[i].phone);
-
+                waitList.push(data)
             }
+            console.log(waitList)
          }
 
     $(".clear").on("click", function(){

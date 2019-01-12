@@ -11,10 +11,10 @@ var reservations = [
         name: "Joe",
         phone: "555-555-5555",
         email: "cool@guy.com",
-        id: "1"
+        tableNum: "1"
     }
 ];
-var tables= [];
+var waitList= [];
 
 app.get("/", function(request, response) {
    
@@ -30,10 +30,19 @@ app.get("/tables", function(request, response) {
 });
 
 app.get("/api/tables", function(request, response) {
-    console.log(reservations);
     return response.json(reservations);
 })
 
+app.post("/api/tables", function(request, response){
+    if (reservations.length < 5) {
+        reservations.push(request.body)
+    }
+    else {
+        waitList.push(requeset.body)
+    }
+
+    console.log(newReservation)
+})
 
 
 
