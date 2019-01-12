@@ -36,7 +36,7 @@
 
     <div class="card" class="reservation">
         <div><h1>Table</h1></div>
-        <h2 id="tableID">ID: </h2>
+        <h2 id="tableNum">Table Number: </h2>
         <h2 id="name">Name: </h2>
         <h2 id="email">Email: </h2>
         <h2 id="phone">Phone: </h2>
@@ -50,7 +50,7 @@
         <div class="card-header">Waiting List</div>
     
         <div class="card" class="waitingList">
-            <h2 id="waitingID">ID: </h2>
+            <h2 id="waitingNum">Table Number: </h2>
             <h2 id="waitingName">Name: </h2>
             <h2 id="waitingEmail">Email: </h2>
             <h2 id="waitingPhone">Phone: </h2>
@@ -79,13 +79,13 @@
         console.log(data);
         for (var i = 0; i < data.length; i++){
             if (data.length < 5){
-                $("#tableID").text("ID: " + data[i].id);
+                $("#tableNum").text("Table Number: " + data[i].tableNum);
                 $("#name").text("Name: " + data[i].name);
                 $("#email").text("Email: " + data[i].email);
                 $("#phone").text("Phone: " + data[i].phone);
             }
             else{
-                $("#waitingID").text("ID: " + data[i].id);
+                $("#waitingID").text("Table Number: " + data[i].tableNum);
                 $("#waitingName").text("Name: " + data[i].name);
                 $("#waitingEmail").text("Email: " + data[i].email);
                 $("#waitingPhone").text("Phone: " + data[i].phone);
